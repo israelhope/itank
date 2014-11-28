@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tank Level library for Israel Rocha</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<style>
+	.outer {
+	    width: 60px;
+	    height: 140px;
+	    border: 10px solid #999;
+	    overflow: hidden;
+	    padding:2px;
+	    position:relative;
+	    -moz-border-radius: 8px;
+	    -webkit-border-radius: 8px;
+	    border-radius: 8px;
+	}
+
+	.inner{
+	    width: 100%;
+	    overflow: hidden;
+	    left: 0;
+	    position: absolute;
+	    border-top-width: 0;
+	    background-color: #00A9EA;
+	    bottom: 0;
+	    height: 15%;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="outer">
+			<div class="inner" data-progress="92%"></div>
+	    </div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script>
+		(function(){
+			console.log(this);
+		})(jQuery);
+	</script>
+</body>
+</html>
