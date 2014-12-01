@@ -6,43 +6,308 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 	<style>
-	.outer {
-	    width: 60px;
-	    height: 140px;
-	    border: 10px solid #999;
-	    overflow: hidden;
-	    padding:2px;
-	    position:relative;
-	    -moz-border-radius: 8px;
-	    -webkit-border-radius: 8px;
-	    border-radius: 8px;
+	.itank-wrap {
+		overflow: hidden;
+		position:relative;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+	}
+	.midly{
+		position:relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.inner{
+		width: 100%;
+		overflow: hidden;
+		left: 0;
+		position: absolute;
+		border-top-width: 0;
+		bottom: 0;
+		height: 0;
+	}
+		/*  TEMAS   */
+		/* Simple tank */
+		.simple-tank .itank-wrap{
+			background: #706C64;
+			-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,1);
+			box-shadow: 0px 2px 5px 0px rgba(0,0,0,1);
+		}
+		.simple-tank .inner{
+			background: rgb(135,224,253);
+			background: -moz-linear-gradient(left,  rgba(135,224,253,1) 0%, rgba(83,203,241,1) 40%, rgba(5,171,224,1) 100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(135,224,253,1)), color-stop(40%,rgba(83,203,241,1)), color-stop(100%,rgba(5,171,224,1)));
+			background: -webkit-linear-gradient(left,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%);
+			background: -o-linear-gradient(left,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%);
+			background: -ms-linear-gradient(left,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%);
+			background: linear-gradient(to right,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%);
+		}
+		/* Border tank*/
+		.border-tank .itank-wrap{
+			background: #706C64;
+			-moz-border-radius: 20px;
+			-webkit-border-radius: 20px;
+			border-radius: 20px;
+		}
+		.border-tank .midly{
+			position: absolute;
+			top: 10px;
+			bottom: 10px;
+			right: 10px;
+			left: 10px;
+			width: auto;
+			height: auto;
+			background-color: #FFF;
+			border:2px solid #FFF;
+			-moz-border-radius: 13px;
+			-webkit-border-radius: 13px;
+			border-radius: 13px;
+		}
+		.border-tank .inner{
+			background: rgb(183,222,237);
+			background: -moz-linear-gradient(left,  rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(183,222,237,1)), color-stop(50%,rgba(113,206,239,1)), color-stop(51%,rgba(33,180,226,1)), color-stop(100%,rgba(183,222,237,1)));
+			background: -webkit-linear-gradient(left,  rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%);
+			background: -o-linear-gradient(left,  rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%);
+			background: -ms-linear-gradient(left,  rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%);
+			background: linear-gradient(to right,  rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%);
+		}
+		.border-tank .border-region{
+			float: left;
+			width: 100%;
+		}
+		/* progress tank */
+		.glass-tank .itank-wrap{
+			border: 1px solid #ccc;
+			-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,1);
+			box-shadow: 0px 2px 5px 0px rgba(0,0,0,1);
+		}
+		.glass-tank .midly{
+			border:1px solid #FFF;
+			-moz-border-radius: 7px;
+			-webkit-border-radius: 7px;
+			border-radius: 7px;
+		}
+		.glass-tank .inner{
+			background: #00acee;
+			background: -moz-linear-gradient(left,  #00acee 0%, #0078a6 100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#00acee), color-stop(100%,#0078a6));
+			background: -webkit-linear-gradient(left,  #00acee 0%,#0078a6 100%);
+			background: -o-linear-gradient(left,  #00acee 0%,#0078a6 100%);
+			background: -ms-linear-gradient(left,  #00acee 0%,#0078a6 100%);
+			background: linear-gradient(to right,  #00acee 0%,#0078a6 100%);
+		}
+		/* Progress tank */
+		.progress-tank .itank-wrap{
+			border: 1px solid #ccc;
+			background: rgb(255,255,255);
+			background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1)));
+			background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+			background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+			background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+			background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+
+		}
+		.progress-tank .midly{
+
+		}
+		.progress-tank .inner{
+			background: rgb(191,210,85);
+			background: -moz-linear-gradient(left,  rgba(191,210,85,1) 0%, rgba(142,185,42,1) 50%, rgba(114,170,0,1) 51%, rgba(158,203,45,1) 100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(191,210,85,1)), color-stop(50%,rgba(142,185,42,1)), color-stop(51%,rgba(114,170,0,1)), color-stop(100%,rgba(158,203,45,1)));
+			background: -webkit-linear-gradient(left,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
+			background: -o-linear-gradient(left,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
+			background: -ms-linear-gradient(left,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
+			background: linear-gradient(to right,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
+		}
+		/* Bootstrap tank */
+		.bootstrap-tank .progress-bar{
+			background-repeat: repeat;
+		}
+		.bootstrap-tank .progress-bar.up{
+			-webkit-animation: progress-bar-tank-up 2s linear infinite;
+			-o-animation: progress-bar-tank-up 2s linear infinite;
+			animation: progress-bar-tank-up 2s linear infinite;
+		}
+		.bootstrap-tank .progress-bar.down{
+			-webkit-animation: progress-bar-tank-down 2s linear infinite;
+			-o-animation: progress-bar-tank-down 2s linear infinite;
+			animation: progress-bar-tank-down 2s linear infinite;
+		}
+		.bootstrap-tank .progress-striped .progress-bar, 
+		.bootstrap-tank .progress-bar-striped{
+			background-size: 20px 20px;
+		}
+		@-webkit-keyframes progress-bar-tank-up {
+		  from {
+		    background-position: 0 20px;
+		  }
+		  to {
+		    background-position: 0 0;
+		  }
+		}
+		@-o-keyframes progress-bar-tank-up {
+		  from {
+		    background-position: 0 20px;
+		  }
+		  to {
+		    background-position: 0 0;
+		  }
+		}
+		@keyframes progress-bar-tank-up {
+		  from {
+		    background-position: 0 20px;
+		  }
+		  to {
+		    background-position: 0 0;
+		  }
+		}
+		@-webkit-keyframes progress-bar-tank-down {
+		  from {
+		    background-position: 0 0;
+		  }
+		  to {
+		    background-position: 0 20px;
+		  }
+		}
+		@-o-keyframes progress-bar-tank-down {
+		  from {
+		    background-position: 0 0;
+		  }
+		  to {
+		    background-position: 0 20px;
+		  }
+		}
+		@keyframes progress-bar-tank-down {
+		  from {
+		    background-position: 0 0;
+		  }
+		  to {
+		    background-position: 0 20px;
+		  }
+		}
+
+
+	.customtank{
+		float:left;
+		margin:0 10px 15px;
+		height:150px;
 	}
 
-	.inner{
-	    width: 100%;
-	    overflow: hidden;
-	    left: 0;
-	    position: absolute;
-	    border-top-width: 0;
-	    background-color: #00A9EA;
-	    bottom: 0;
-	    height: 15%;
-	}
 
 	</style>
 </head>
 <body>
 	<div class="container">
-		<div class="outer">
-			<div class="inner" data-progress="92%"></div>
-	    </div>
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1>Nivel de tanque</h1>
+				</div>
+				<div class="col-lg-6">
+					<div role="form">
+						<div class="form-group">
+							<label for=""></label>
+							<input id="progress" name="progress" type="text" class="form-control">
+						</div>
+						<button id="update" type="button" class="btn btn-default">Update</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<h2>Simple Tank</h2>
+				<div class="simple-tank">
+					<div class="customtank" style="width: 200px;"><div class="inner bluegrad"></div></div>
+					<div class="customtank" style="width: 120px;"><div class="inner bluegrad"></div></div>
+					<div class="customtank" style="width: 75px;"><div class="inner bluegrad"></div></div>
+					<div class="customtank" style="width: 50px;"><div class="inner bluegrad"></div></div>
+				</div>
+				<h2>Border Tank</h2>
+				<div class="border-tank">
+					<div class="customtank" style="width: 200px;">
+						<div class="border-region" style="height:20%;background-color:#706C64;"></div>
+						<div class="border-region" style="height:30%;background-color:#b8c6df;"></div>
+						<div class="midly"><div class="inner bluegrad"></div></div>
+					</div>
+					<div class="customtank" style="width: 120px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 75px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 50px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+				</div>
+				<h2>Bootstrap Tank</h2>
+				<div class="bootstrap-tank">
+					<div class="customtank progress" style="width: 200px;"><div class="midly"><div class="inner progress-bar progress-bar-success progress-bar-striped"></div></div></div>
+					<div class="customtank progress" style="width: 120px;"><div class="midly"><div class="inner progress-bar progress-bar-info progress-bar-striped"></div></div></div>
+					<div class="customtank progress" style="width: 75px;"><div class="midly"><div class="inner progress-bar progress-bar-warning progress-bar-striped up"></div></div></div>
+					<div class="customtank progress" style="width: 50px;"><div class="midly"><div class="inner progress-bar progress-bar-danger progress-bar-striped down"></div></div></div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Glass Tank</h2>
+				<div class="glass-tank">
+					<div class="customtank" style="width: 200px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 120px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 75px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 50px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+				</div>
+				<h2>Progress Tank</h2>
+				<div class="progress-tank">
+					<div class="customtank" style="width: 200px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 120px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 75px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+					<div class="customtank" style="width: 50px;"><div class="midly"><div class="inner bluegrad"></div></div></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script>
-		(function(){
-			console.log(this);
+		(function($){
+			$.fn.itank = function(options){
+
+				this.addClass('itank-wrap');
+
+				if(typeof options === "number"){
+					update(this, options);
+				}else if(typeof options === "string"){
+					if(options === "setValue" && arguments.length > 1){
+						update(this, arguments[1]);
+					}
+				}
+				
+				return this;
+			}
+
+			function update(el, percent){
+				el.find('.inner').animate({
+					height: percent+'%'
+				},300);
+			}
 		})(jQuery);
+
+		$('.customtank').itank(75);
+		$('#update').click(function(){
+			var p = $('#progress').val();
+			if(p){
+				$('.customtank').itank("setValue", p);
+			}
+			$('#progress').val('');
+		});
+		$('#progress').keyup(function (e){
+			if(e.keyCode == 13){
+				$("#update").trigger('click');
+			}
+		});
 	</script>
 </body>
 </html>
