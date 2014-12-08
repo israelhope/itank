@@ -30,6 +30,9 @@
 		border-top-width: 0;
 		bottom: 0;
 		height: 0;
+		-moz-border-radius: inherit;
+		-webkit-border-radius: inherit;
+		border-radius: inherit;
 	}
 	.itank-wrap .inner>.desc{
 		color:#eee;
@@ -68,7 +71,7 @@
 			-webkit-border-radius: 0;
 			border-radius: 0;
 		}
-		.oil-tank .inner{
+		.oil-liquid, .oil-tank .inner{
 			background: #0d0d0d;
 			background: -moz-linear-gradient(left,  #0d0d0d 0%, #4e4e4e 19%, #383838 34%, #383838 34%, #1b1b1b 100%);
 			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0d0d0d), color-stop(19%,#4e4e4e), color-stop(34%,#383838), color-stop(34%,#383838), color-stop(100%,#1b1b1b));
@@ -76,8 +79,6 @@
 			background: -o-linear-gradient(left,  #0d0d0d 0%,#4e4e4e 19%,#383838 34%,#383838 34%,#1b1b1b 100%);
 			background: -ms-linear-gradient(left,  #0d0d0d 0%,#4e4e4e 19%,#383838 34%,#383838 34%,#1b1b1b 100%);
 			background: linear-gradient(to right,  #0d0d0d 0%,#4e4e4e 19%,#383838 34%,#383838 34%,#1b1b1b 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d0d0d', endColorstr='#1b1b1b',GradientType=1 );
-
 		}
 		/* Simple tank */
 		.simple-tank .itank-wrap{
@@ -174,73 +175,7 @@
 			background: -o-linear-gradient(left,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
 			background: -ms-linear-gradient(left,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
 			background: linear-gradient(to right,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%);
-		}
-		/* Bootstrap tank */
-		.bootstrap-tank .progress-bar{
-			background-repeat: repeat;
-		}
-		.bootstrap-tank .progress-bar.up{
-			-webkit-animation: progress-bar-tank-up 2s linear infinite;
-			-o-animation: progress-bar-tank-up 2s linear infinite;
-			animation: progress-bar-tank-up 2s linear infinite;
-		}
-		.bootstrap-tank .progress-bar.down{
-			-webkit-animation: progress-bar-tank-down 2s linear infinite;
-			-o-animation: progress-bar-tank-down 2s linear infinite;
-			animation: progress-bar-tank-down 2s linear infinite;
-		}
-		.bootstrap-tank .progress-striped .progress-bar, 
-		.bootstrap-tank .progress-bar-striped{
-			background-size: 20px 20px;
-		}
-		@-webkit-keyframes progress-bar-tank-up {
-		  from {
-		    background-position: 0 20px;
-		  }
-		  to {
-		    background-position: 0 0;
-		  }
-		}
-		@-o-keyframes progress-bar-tank-up {
-		  from {
-		    background-position: 0 20px;
-		  }
-		  to {
-		    background-position: 0 0;
-		  }
-		}
-		@keyframes progress-bar-tank-up {
-		  from {
-		    background-position: 0 20px;
-		  }
-		  to {
-		    background-position: 0 0;
-		  }
-		}
-		@-webkit-keyframes progress-bar-tank-down {
-		  from {
-		    background-position: 0 0;
-		  }
-		  to {
-		    background-position: 0 20px;
-		  }
-		}
-		@-o-keyframes progress-bar-tank-down {
-		  from {
-		    background-position: 0 0;
-		  }
-		  to {
-		    background-position: 0 20px;
-		  }
-		}
-		@keyframes progress-bar-tank-down {
-		  from {
-		    background-position: 0 0;
-		  }
-		  to {
-		    background-position: 0 20px;
-		  }
-		}
+		}		
 
 	/* Estilos customizados */
 	.customtank{

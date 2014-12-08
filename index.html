@@ -73,59 +73,55 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="row">
+		<div class="row">
 			<div class="col-lg-6">
-				<div>
-					<h2>Progress Oil Tank</h2>
-					<div class="oil-tank">
-						<div class="customtank" style="width: 200px;"></div>
-						<div class="customtank" style="width: 120px;"></div>
-						<div class="customtank" style="width: 75px;"></div>
-						<div class="customtank" style="width: 30px;"></div>
-					</div>
-				</div>
-				<h2>Simple Tank</h2>
-				<div class="simple-tank">
-					<div class="customtank" style="width: 200px;"></div>
-					<div class="customtank" style="width: 120px;"></div>
-					<div class="customtank" style="width: 75px;"></div>
-					<div class="customtank" style="width: 50px;"></div>
-				</div>
-				<h2>Border Tank</h2>
-				<div class="border-tank">
-					<div class="customtank" style="width: 200px;">
-						<div class="border-region" style="height:20%;background-color:#706C64;"></div>
-						<div class="border-region" style="height:30%;background-color:#b8c6df;"></div>
-					</div>
-					<div class="customtank" style="width: 120px;"></div>
-					<div class="customtank" style="width: 75px;"></div>
-					<div class="customtank" style="width: 50px;"></div>
-				</div>
+				<table>
+					<tr>
+						<td><h2>Progress Oil Tank</h2></td>
+						<td>
+							<div class="oil-tank">
+								<div class="customtank" style="width: 30px;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><h2>Simple Tank</h2></td>
+						<td>
+							<div class="simple-tank">
+								<div class="customtank" style="width: 50px;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><h2>Border Tank</h2></td>
+						<td>
+							<div class="border-tank">
+								<div class="customtank" style="width: 50px;">
+									<div class="border-region" style="height:20%;background-color:#706C64;"></div>
+									<div class="border-region" style="height:30%;background-color:#b8c6df;"></div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><h2>Glass Tank</h2></td>
+						<td>
+							<div class="glass-tank">
+								<div class="customtank" style="width: 50px;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><h2>Progress Tank</h2></td>
+						<td>
+							<div class="progress-tank">
+								<div class="customtank" style="width: 50px;"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
 			</div>
-			<div class="col-lg-6">
-				<h2>Glass Tank</h2>
-				<div class="glass-tank">
-					<div class="customtank" style="width: 200px;"></div>
-					<div class="customtank" style="width: 120px;"></div>
-					<div class="customtank" style="width: 75px;"></div>
-					<div class="customtank" style="width: 50px;"></div>
-				</div>
-				<h2>Progress Tank</h2>
-				<div class="progress-tank">
-					<div class="customtank" style="width: 200px;"></div>
-					<div class="customtank" style="width: 120px;"></div>
-					<div class="customtank" style="width: 75px;"></div>
-					<div class="customtank" style="width: 50px;"></div>
-				</div>
-				<h2>Bootstrap Tank</h2>
-				<div class="bootstrap-tank">
-					<div class="customtank progress" style="width: 200px;"></div>
-					<div class="customtank progress" style="width: 120px;"></div>
-					<div class="customtank progress" style="width: 75px;"></div>
-					<div class="customtank progress" style="width: 50px;"></div>
-				</div>
-			</div>
-		</div> -->
+		</div>
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -134,11 +130,13 @@
 		$('#tank1').itank();
 		$('#tank2').itank(20);
 		$('#tank3').itank("30");
-		$('#tank4').itank({value:60, showValue:true});
-		$('#tank5').itank({value:75, showValue:true, units:'cm'});
-		$('#tank6').itank({value:300, max:500, min:200, showValue:true, duration:800});
-		$('#tank7').itank({value:56.487, showValue:true, decimals:2});
-		//$('.customtank').itank();
+		$('#tank4').itank({value:60, showval:true});
+		$('#tank5').itank({value:75, showval:true, units:'cm'});
+		$('#tank6').itank({value:300, max:500, min:200, showval:true, duration:800});
+		$('#tank7').itank({value:56.487, showval:true, decimals:2});
+		$('#tank8').itank({value:56.487, max:1000,min:20,showval:true, duration:1000,decimals:2});
+		
+		//$('.customtank').itank(70);
 
 		$('#update').click(function(){
 			var p = $('#progress').val();

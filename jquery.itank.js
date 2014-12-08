@@ -15,6 +15,10 @@
 *		min: Establece el minimo valor del contenedor o tanque. Default 0.
 *		max: Establece el máximo valor del contenedor o tanque. Default 100.
 *		value: Establece el valor del nivel del tanque. Default 0.
+*		showval: Muestra el valor actual del tanque. Default false.
+*		units: Unidades de lectura, se mostrará solo si showval es true. Default ''.
+*		decimals: Numero de decimales, solo se mostrará solo si showval es true. Default 0.
+*		duration: Duración de la animación en milisegundos, Default 400.
 *
 *	Funciones
 *		setValue: Establece el valor del tanque
@@ -28,7 +32,7 @@
 		min: 0,
 		max: 100,
 		value:0,
-		showValue: false,
+		showval: false,
 		units: '',
 		decimals:0,
 		duration:400
@@ -65,7 +69,7 @@
 		if(el.data('inited') !== true){
 			el.data('inited', true);
 			el.addClass('itank-wrap');
-			el.append('<div class="midly"><div class="inner"><div class="desc'+( (options.showValue) ? "" : " noshow" )+'"><span>'+options.value+'</span>'+options.units+'</div></div></div>');
+			el.append('<div class="midly"><div class="inner"><div class="desc'+( (options.showval) ? "" : " noshow" )+'"><span>'+options.value+'</span>'+options.units+'</div></div></div>');
 			$.each(options, function(i, val){
 				el.data(i, val);
 			})
