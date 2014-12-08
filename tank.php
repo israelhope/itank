@@ -18,7 +18,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script src="./jquery.itank.js"></script>
 	<script>
-		$('.customtank').itank();
+		$('.customtank').itank({showValue:true});
 
 		$('#update').click(function(){
 			var p = $('#progress').val();

@@ -5,6 +5,15 @@
 	<title>Tank Level library for Israel Rocha</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="./itank.css">
+	<style>
+	.tanklevelbig {
+		width: 200px;
+	}
+	.mr{
+		margin-right: 20px;
+	}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -26,7 +35,42 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<iframe src="./tank.php?oid=2" height="250" frameborder="0"></iframe>
+				<!-- <iframe src="./tank.php?oid=2" height="250" frameborder="0"></iframe> -->
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank1" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank1: Sin opciones</small></p>
+				</div>
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank2" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank2: itank(entero)</small></p>
+				</div>
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank3" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank3: itank(string)</small></p>
+				</div>
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank4" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank4: Valor 50 showValue</small></p>
+				</div>
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank5" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank5: Unidades Milimetros</small></p>
+				</div>
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank6" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank6: Min: 200, Max: 500, val: 200, duration: 800</small></p>
+				</div>
+				<div class="tanklevelbig oil-tank">
+					<img src="bigtank-sm.min.jpg" alt="Nivel">
+					<div id="tank7" class="customtank" style="width:30px"></div>
+					<p class="text-muted"><small>Tank7: 2 Decimals</small></p>
+				</div>
 			</div>
 		</div>
 		<!-- <div class="row">
@@ -52,7 +96,6 @@
 					<div class="customtank" style="width: 200px;">
 						<div class="border-region" style="height:20%;background-color:#706C64;"></div>
 						<div class="border-region" style="height:30%;background-color:#b8c6df;"></div>
-						
 					</div>
 					<div class="customtank" style="width: 120px;"></div>
 					<div class="customtank" style="width: 75px;"></div>
@@ -86,5 +129,28 @@
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="./jquery.itank.js"></script>
+	<script>
+		$('#tank1').itank();
+		$('#tank2').itank(20);
+		$('#tank3').itank("30");
+		$('#tank4').itank({value:60, showValue:true});
+		$('#tank5').itank({value:75, showValue:true, units:'cm'});
+		$('#tank6').itank({value:300, max:500, min:200, showValue:true, duration:800});
+		$('#tank7').itank({value:56.487, showValue:true, decimals:2});
+		//$('.customtank').itank();
+
+		$('#update').click(function(){
+			var p = $('#progress').val();
+			if(p)
+				$('.customtank').itank(p);
+			$('#progress').val('');
+		});
+		$('#progress').keyup(function (e){
+			if(e.keyCode == 13){
+				$("#update").trigger('click');
+			}
+		});
+	</script>
 </body>
 </html>

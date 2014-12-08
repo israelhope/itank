@@ -27,12 +27,18 @@
 	var settings = {
 		min: 0,
 		max: 100,
-		value:0
+		value:0,
+		showValue: false,
+		units: '',
+		decimals:0,
+		duration:400
 	};
 	$.fn.itank = function(options, param1){
 
+		var c_settings = {};
+		$.extend(c_settings, settings);
 		if(typeof options === "object")
-			$.extend(settings, options);
+			$.extend(c_settings, options);
 
 		if(options === "getValue")
 			return getValue(this);
@@ -41,9 +47,9 @@
 			var element = $(this); /* Single element */
 			/* Customize settings apply to individual element */
 			/* This settings are modified by data attributes */
-			var c_settings = getCustomProps(element);
+			var i_settings = getCustomProps(element, c_settings);
 
-			_init(element, c_settings);
+			_init(element, i_settings);
 
 			if(typeof options === "number" || !isNaN(parseInt(options)))
 				update(element, options);
@@ -59,24 +65,45 @@
 		if(el.data('inited') !== true){
 			el.data('inited', true);
 			el.addClass('itank-wrap');
-			el.append('<div class="midly"><div class="inner"></div></div>');
+			el.append('<div class="midly"><div class="inner"><div class="desc'+( (options.showValue) ? "" : " noshow" )+'"><span>'+options.value+'</span>'+options.units+'</div></div></div>');
 			$.each(options, function(i, val){
 				el.data(i, val);
 			})
+			el.data("value", options.min); // Se establece el valor inicial (cero)
 			update(el, options.value);
 		}
 	}
 	function update(el, value){
-		el.data('value', value);
+		var max = el.data('max');
+		var min = el.data('min');
+
+		if(value > max)
+			value = max
+		if(value < min)
+			value = min
+
+		var oldv = getValue(el);
+		var el_txt = el.find('.inner>.desc span');
+		var round = Math.pow(10, el.data('decimals'));
+		
 		el.find('.inner').animate({
-			height: Math.min(parseInt((value/el.data('max'))*100),100)+'%'
-		},300);
+			height: parseInt(((value - min) / (max - min))*100)+'%'
+		},
+		{
+			duration: el.data('duration'),
+			queue:false,
+			progress:function(animation, progress, remainingMs){
+				var vact = Math.round(((value - oldv) * progress + oldv) * round) / round ;
+				el_txt.text(vact);
+				el.data('value', vact);
+			}
+		}); 
 	}
 	function getValue(el){
 		return el.data('value');
 	}
-	function getCustomProps(el){
-		return $.extend({}, settings, getPropData(el));
+	function getCustomProps(el, c_settings){
+		return $.extend({}, c_settings, getPropData(el));
 	}
 	function getPropData(el){
 		var res = {};
