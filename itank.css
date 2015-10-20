@@ -66,11 +66,6 @@
 			-webkit-border-radius: 3px;
 			border-radius: 3px;
 		}
-		.oil-tank .midly{
-			-moz-border-radius: 0;
-			-webkit-border-radius: 0;
-			border-radius: 0;
-		}
 		.oil-liquid, .oil-tank .inner{
 			background: #0d0d0d;
 			background: -moz-linear-gradient(left,  #0d0d0d 0%, #4e4e4e 19%, #383838 34%, #383838 34%, #1b1b1b 100%);
